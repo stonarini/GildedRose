@@ -1,4 +1,5 @@
 import pytest
+from src.normal_item import NormalItem
 
 
 @pytest.mark.create
@@ -20,6 +21,7 @@ def test_update_quality():
 @pytest.mark.expired
 def test_item_expired():
     normal_item = NormalItem("+5 Dexterity Vest", -1, 10)
+    normal_item.update_quality()
     assert -2 == normal_item.get_sell_in()
     assert 8 == normal_item.get_quality()
 
@@ -27,5 +29,6 @@ def test_item_expired():
 @pytest.mark.min_quality
 def test_min_quality():
     normal_item = NormalItem("+5 Dexterity Vest", 10, 0)
+    normal_item.update_quality()
     assert 9 == normal_item.get_sell_in()
     assert 0 == normal_item.get_quality()
