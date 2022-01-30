@@ -1,5 +1,5 @@
 import pytest
-from src.normal_item import NormalItem
+from src import NormalItem
 
 
 @pytest.mark.create
