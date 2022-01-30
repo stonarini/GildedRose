@@ -1,4 +1,5 @@
 import pytest
+from src import ConjuredItem
 
 
 @pytest.mark.create
@@ -20,10 +21,12 @@ def test_update_quality():
 @pytest.mark.expired
 def test_item_expired():
     conjured = ConjuredItem("Conjured Mana Cake", -1, 6)
+    conjured.update_quality()
     assert -2 == conjured.get_sell_in()
     assert 2 == conjured.get_quality()
 
     conjured = ConjuredItem("Conjured Mana Cake", 0, 6)
+    conjured.update_quality()
     assert -1 == conjured.get_sell_in()
     assert 2 == conjured.get_quality()
 
@@ -31,9 +34,11 @@ def test_item_expired():
 @pytest.mark.min_quality
 def test_min_quality():
     conjured = ConjuredItem("Conjured Mana Cake", 0, 0)
+    conjured.update_quality()
     assert -1 == conjured.get_sell_in()
     assert 0 == conjured.get_quality()
 
     conjured = ConjuredItem("Conjured Mana Cake", 1, 1)
+    conjured.update_quality()
     assert 0 == conjured.get_sell_in()
     assert 0 == conjured.get_quality()
