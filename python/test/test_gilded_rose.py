@@ -1,4 +1,5 @@
 import pytest
+from src import AgedBrie, Backstage, ConjuredItem, GildedRose, NormalItem, Sulfuras
 
 
 @pytest.mark.gilded_rose
@@ -21,7 +22,7 @@ def test_gilded_rose():
         ConjuredItem(name="Conjured Mana Cake", sell_in=3, quality=6),
     ]
 
-    days = 2
+    days = 10
     for day in range(days):
         print(f"-------- day {day} --------")
         print("name, sell_in, quality")
