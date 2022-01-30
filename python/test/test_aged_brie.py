@@ -1,4 +1,5 @@
 import pytest
+from src import AgedBrie
 
 
 @pytest.mark.create
@@ -20,6 +21,7 @@ def test_update_quality():
 @pytest.mark.expired
 def test_item_expired():
     brie = AgedBrie("Aged Brie", 0, 1)
+    brie.update_quality()
     assert -1 == brie.get_sell_in()
     assert 3 == brie.get_quality()
 
@@ -27,5 +29,6 @@ def test_item_expired():
 @pytest.mark.max_quality
 def test_max_quality():
     brie = AgedBrie("Aged Brie", 1, 50)
+    brie.update_quality()
     assert 0 == brie.get_sell_in()
     assert 50 == brie.get_quality()
