@@ -1,9 +1,10 @@
 import pytest
+from src import Backstage
 
 
 @pytest.mark.create
 def test_create_item():
-    ticket = Backstage("Backstage", 1, 1)
+    ticket = Backstage("Backstage passes to a TAFKAL80ETC concert", 1, 1)
     assert "Backstage passes to a TAFKAL80ETC concert" == ticket.get_name()
     assert 1 == ticket.get_sell_in()
     assert 1 == ticket.get_quality()
@@ -36,6 +37,7 @@ def test_update_quality_zero():
 @pytest.mark.expired
 def test_item_expired():
     ticket = Backstage("Backstage passes to a TAFKAL80ETC concert", 0, 30)
+    ticket.update_quality()
     assert -1 == ticket.get_sell_in()
     assert 0 == ticket.get_quality()
 
@@ -43,9 +45,11 @@ def test_item_expired():
 @pytest.mark.max_quality
 def test_max_quality():
     ticket = Backstage("Backstage passes to a TAFKAL80ETC concert", 2, 50)
-    assert 0 == ticket.get_sell_in()
+    ticket.update_quality()
+    assert 1 == ticket.get_sell_in()
     assert 50 == ticket.get_quality()
 
-    ticket = Backstage("Backstage passes to a TAFKAL80ETC concert", 13, 49)
-    assert 0 == ticket.get_sell_in()
+    ticket = Backstage("Backstage passes to a TAFKAL80ETC concert", 2, 49)
+    ticket.update_quality()
+    assert 1 == ticket.get_sell_in()
     assert 50 == ticket.get_quality()
