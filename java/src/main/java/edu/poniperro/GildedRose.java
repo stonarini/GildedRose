@@ -11,6 +11,10 @@ public class GildedRose {
     public GildedRose() {
     }
 
+    public GildedRose(NormalItem[] items) {
+        this.stock.addAll(List.of(items));
+    }
+
     void addItem(NormalItem item) {
         this.stock.add(item);
     }

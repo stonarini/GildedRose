@@ -17,8 +17,6 @@ public class SulfurasTest {
 	@Test
 	public void toStringTest() {
 		Sulfuras sulfuras = new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80);
-		System.out.println("Sulfuras toString() test");
-		System.out.println(sulfuras.toString());
 	}
 
 	@Test

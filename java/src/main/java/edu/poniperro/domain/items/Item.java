@@ -37,7 +37,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item Name: " + this.name + "\nSell in: " + this.sellIn + "\nQuality: " + this.quality;
+		return "Item Name: " + this.name + "\nSell in: " + this.sellIn + "\tQuality: " + this.quality;
 	}
 
 }

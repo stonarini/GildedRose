@@ -17,7 +17,6 @@ public class NormalItemTest {
 	@Test
 	public void toStringTest() {
 		NormalItem normal = new NormalItem("+5 Dexterity Vest", 10, 20);
-		System.out.println(normal.toString());
 	}
 
 	@Test

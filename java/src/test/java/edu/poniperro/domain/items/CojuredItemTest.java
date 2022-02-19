@@ -17,8 +17,6 @@ public class CojuredItemTest {
 	@Test
 	public void toStringTest() {
 		ConjuredItem conjured = new ConjuredItem("Conjured Mana Cake", 3, 6);
-		System.out.println("toString() ConjuredItem test:");
-		System.out.println(conjured.toString());
 	}
 
 	@Test

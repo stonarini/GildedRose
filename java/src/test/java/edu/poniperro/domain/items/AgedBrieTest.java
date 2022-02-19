@@ -16,8 +16,6 @@ public class AgedBrieTest {
     @Test
     public void toStringTest() {
         AgedBrie cheese = new AgedBrie("Aged Brie", 2, 0);
-        System.out.println("toString() Aged Brie test:");
-        System.out.println(cheese.toString());
     }
 
     @Test

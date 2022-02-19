@@ -17,8 +17,6 @@ public class BackstageTest {
 	@Test
 	public void toStringTest() {
 		Backstage pass = new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20);
-		System.out.println("toString() Backstage test");
-		System.out.println(pass.toString());
 	}
 
 	@Test
